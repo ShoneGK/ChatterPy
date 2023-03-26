@@ -1,0 +1,4 @@
+*build/
+*ChatterBot.egg-info/
+*env/
+*.DS_Store

@@ -8,7 +8,6 @@ import platform
 import configparser
 from setuptools import setup
 
-
 if sys.version_info[0] < 3:
     raise Exception(
         'You are tying to install ChatterBot on Python version {}.\n'
@@ -17,6 +16,7 @@ if sys.version_info[0] < 3:
         )
     )
 
+        
 config = configparser.ConfigParser()
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -69,7 +69,7 @@ setup(
     include_package_data=True,
     install_requires=REQUIREMENTS,
     dependency_links=DEPENDENCIES,
-    python_requires='>=3.4, <=3.8',
+    python_requires='>=3.4',
     license='BSD',
     zip_safe=True,
     platforms=['any'],
@@ -93,5 +93,6 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3 :: Only',
     ],
-    test_suite='tests'
+    test_suite='tests',
+
 )

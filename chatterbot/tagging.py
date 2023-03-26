@@ -1,5 +1,6 @@
 import string
 from chatterbot import languages
+from sys import exit
 
 
 class LowercaseTagger(object):
@@ -23,7 +24,11 @@ class PosLemmaTagger(object):
 
         self.punctuation_table = str.maketrans(dict.fromkeys(string.punctuation))
 
-        self.nlp = spacy.load(self.language.ISO_639_1.lower())
+        try:
+            self.nlp = spacy.load(self.language.ISO_639_1.lower() + "_core_web_sm")
+        except Exception as e:
+            print(e)
+            exit("ERROR: spacy may not be installed. try running `python3 -m spacy download en_core_web_sm`")
 
     def get_text_index_string(self, text):
         """
