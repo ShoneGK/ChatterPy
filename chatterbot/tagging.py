@@ -24,11 +24,19 @@ class PosLemmaTagger(object):
 
         self.punctuation_table = str.maketrans(dict.fromkeys(string.punctuation))
 
-        try:
-            self.nlp = spacy.load(self.language.ISO_639_1.lower() + "_core_web_sm")
-        except Exception as e:
-            print(e)
-            exit("ERROR: spacy may not be installed. try running `python3 -m spacy download en_core_web_sm`")
+        if hasattr(language, 'SPACY_MODEL'):
+            try:    
+                self.nlp = spacy.load(self.language.SPACY_MODEL)
+            except Exception as e:
+                print(e)
+                exit("ERROR: spacy model may not be installed. try running `python3 -m spacy download " + self.language.SPACY_MODEL + "`")
+        
+        else:
+            try:
+                self.nlp = spacy.load(self.language.ISO_639_1.lower())
+            except Exception as e:
+                print(e)
+                print("ERROR: spacy model was not found or is unavailable for this laungage")
 
     def get_text_index_string(self, text):
         """
