@@ -8,7 +8,7 @@ known conversations. The language independent design of ChatterBot allows it
 to be trained to speak any language.
 
 [![Package Version](https://img.shields.io/pypi/v/chatterbot.svg)](https://pypi.python.org/pypi/chatterbot/)
-[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-360/)
 [![Django 2.0](https://img.shields.io/badge/Django-2.0-blue.svg)](https://docs.djangoproject.com/en/2.1/releases/2.0/)
 [![Requirements Status](https://requires.io/github/gunthercox/ChatterBot/requirements.svg?branch=master)](https://requires.io/github/gunthercox/ChatterBot/requirements/?branch=master)
 [![Build Status](https://travis-ci.org/gunthercox/ChatterBot.svg?branch=master)](https://travis-ci.org/gunthercox/ChatterBot)
@@ -30,10 +30,10 @@ An untrained instance of ChatterBot starts off with no knowledge of how to commu
 
 ## Installation
 
-This package can be installed from [PyPi](https://pypi.python.org/pypi/ChatterBot) by running:
+This package can be installed from [Github](https://github.com/ShoneGK/ChatterPy) by running:
 
 ```sh
-pip install chatterbot
+pip install git+https://github.com/ShoneGK/ChatterPy
 ```
 
 Chatterbot also requires corpus of text to use as training data.
